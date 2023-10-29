@@ -1,0 +1,28 @@
+{% extends "base.html"%}
+
+{% block title %} households {% endblock %}
+
+{% block content %}
+<h1>household page</h1>
+<table class="table table-striped" style="width: 100%" id="my_table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">house_number</th>
+            <th scope="col">no_of_rooms</th>
+            <th scope="col">rent</th>
+
+        </tr>
+    </thead>
+    <tbody id="household_table">
+        {% for houses in households %}
+        <tr>
+            <td>{{ houses.id }}</td>
+            <td>{{ houses.house_number }}</td>
+            <td>{{ houses.no_of_rooms }}</td>
+            <td>{{ houses.rent }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
